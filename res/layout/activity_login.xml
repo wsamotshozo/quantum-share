@@ -37,12 +37,22 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/password"
         android:text="@string/loginBtn" />
- 
+
     <Button
         android:id="@+id/signup"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login"
+        android:layout_alignLeft="@+id/login"
+        android:layout_centerVertical="true"
         android:text="@string/signupBtn" />
+
+    <Button
+        android:id="@+id/fpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/signup"
+        android:layout_alignRight="@+id/signup"
+        android:layout_below="@+id/signup"
+        android:text="Forgot Password" />
  
 </RelativeLayout>

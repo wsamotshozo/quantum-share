@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="41dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_marginLeft="42dp"
+        android:layout_toRightOf="@+id/imageView1"
+        android:text="Full name"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+<!-- 
+    <RatingBar
+        android:id="@+id/reliability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/phone"
+        android:layout_marginTop="72dp" />
+
+    <RatingBar
+        android:id="@+id/friendlyness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/reliability"
+        android:layout_marginTop="24dp" /> -->
+
+    <TextView
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/name"
+        android:layout_below="@+id/imageView1"
+        android:text="phone number" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/phone"
+        android:layout_below="@+id/phone"
+        android:layout_marginTop="16dp"
+        android:text="email" />
+
+
+<!-- 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/reliability"
+        android:text="reliability" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_below="@+id/email"
+        android:layout_marginTop="25dp"
+        android:text="friendlyness" />-->
+
+    <Button
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Edit" />
+
+</RelativeLayout>

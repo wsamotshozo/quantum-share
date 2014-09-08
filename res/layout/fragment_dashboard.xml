@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hu.quantumshare.dashboard.DashBoardLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+     >
+    <!--  News Feed Button -->
+    <Button
+        android:id="@+id/profile"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/ic_launcher"
+        android:text="View Profile" />
+     
+    <!--  Friends Button -->
+    <Button
+        android:id="@+id/createTask"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/ic_launcher"
+        android:text="Create Task" />
+     
+    <!--  Messages Button -->
+    <Button
+        android:id="@+id/browseTask"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/ic_launcher"
+        android:text="Browse Task" />
+    
+    <Button
+        android:id="@+id/logout"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/ic_launcher"
+        android:text="Logout" />
+    
+</com.hu.quantumshare.dashboard.DashBoardLayout>

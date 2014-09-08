@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 public class CreateTaskFragment extends Fragment implements OnClickListener {
 	Context context;
@@ -43,13 +44,14 @@ public class CreateTaskFragment extends Fragment implements OnClickListener {
 				container, false);
 		needs = (Spinner) rootView.findViewById(R.id.needs);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-				context, R.array.needs, android.R.layout.simple_spinner_item);
+				context, R.array.needs,R.layout.spinner_item);
 		// Specify the layout to use when the list of choices appears
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		adapter.setDropDownViewResource(R.layout.spinner_item);
 		// Apply the adapter to the spinner
 		needs.setAdapter(adapter);
 
 		time = (TimePicker) rootView.findViewById(R.id.time);
+		//time.setIs24HourView(false);
 		place = (EditText) rootView.findViewById(R.id.place);
 		instructions = (EditText) rootView.findViewById(R.id.instructions);
 		submit = (Button) rootView.findViewById(R.id.submit);
@@ -76,8 +78,51 @@ public class CreateTaskFragment extends Fragment implements OnClickListener {
 			task.put("needs",
 					needs.getItemAtPosition(needs.getSelectedItemPosition())
 							.toString());
-			task.put("time", time.getCurrentHour() + ":"+time.getCurrentMinute());
+			if(time.getCurrentHour() >9 )
+			{
+				task.put("time", time.getCurrentHour() + ":"+time.getCurrentMinute());
+			}
+			else
+			{
+				task.put("time", "0"+time.getCurrentHour() + ":"+time.getCurrentMinute());
+			}
+			/*
+			if(time.getCurrentHour() == 0)
+			{
+				task.put("hour", ""+12 );
+				task.put("minute", time.getCurrentMinute());
+				task.put("time","AM");
+			}
+			else if(time.getCurrentHour() >13)
+			{
+				Integer num = (time.getCurrentHour()-12);
+				if(num > 9)
+				{
+					task.put("hour", ""+ num);
+				}
+				else
+				{
+					task.put("hour", "0"+num);
+				}
+				task.put("minute",time.getCurrentMinute());
+				task.put("time","PM");
+			}
+			else if(time.getCurrentHour() > 9)
+			{
+				task.put("hour", ""+time.getCurrentHour());
+				task.put("minute", time.getCurrentMinute());
+				task.put("time","AM");
+				
+			}
+			else
+			{
+				task.put("hour", "0"+time.getCurrentHour() );
+				task.put("minute", time.getCurrentMinute());
+				task.put("time","AM");
+				
+			}*/
 			task.put("place",place.getText().toString());
+			task.put("taker", "no one");
 			task.put("instructions", instructions.getText().toString());
 			task.saveInBackground();
 			// stops the push notification from being sent to the sender
@@ -90,5 +135,6 @@ public class CreateTaskFragment extends Fragment implements OnClickListener {
 			androidPush.sendInBackground();
 			Log.d("Push notification", "task sent");
 		}
+		Toast.makeText(context, "task sent", Toast.LENGTH_SHORT).show();
 	}
 }

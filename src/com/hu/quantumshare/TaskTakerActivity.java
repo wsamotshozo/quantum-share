@@ -6,13 +6,20 @@ import java.util.ArrayList;
 
 import com.hu.quantumshare.navdrawer.NavDrawerItem;
 import com.hu.quantumshare.navdrawer.NavDrawerListAdapter;
+import com.parse.ParseException;
+import com.parse.ParseUser;
+import com.parse.RequestPasswordResetCallback;
 
 
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -22,8 +29,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class TaskTakerActivity extends Activity {
 	 private DrawerLayout mDrawerLayout;
@@ -70,13 +81,9 @@ public class TaskTakerActivity extends Activity {
 	        // Photos
 	        navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
 	        // Communities, Will add a counter here
-	        navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1), true, "22"));
-	        // Pages
+	        navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
 	        navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
-	        // What's hot, We  will add a counter here
-	        navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1), true, "50+"));
-	         
-	 
+	        
 	        // Recycle the typed array
 	        navMenuIcons.recycle();
 	 
@@ -143,7 +150,25 @@ public class TaskTakerActivity extends Activity {
 	        }
 	        // Handle action bar actions click
 	        switch (item.getItemId()) {
-	        case R.id.action_settings:
+	        case R.id.logout:
+	        	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+	            builder.setMessage("Are you sure that you want to logout?")
+	               .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+	                   public void onClick(DialogInterface dialog, int id) {
+	                	   ParseUser.logOut();
+	                	   Intent intent = new Intent(TaskTakerActivity.this,
+	       						LoginActivity.class);
+	       				startActivity(intent);
+	                   }
+	               })
+	               .setNegativeButton("No", new DialogInterface.OnClickListener() {
+	                   public void onClick(DialogInterface dialog, int id) {
+	                       
+	                   }
+	               });
+	        // Create the AlertDialog object and return it
+	        AlertDialog popup = builder.create();
+	        popup.show();
 	            return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
@@ -157,7 +182,7 @@ public class TaskTakerActivity extends Activity {
 	    public boolean onPrepareOptionsMenu(Menu menu) {
 	        // if nav drawer is opened, hide the action items
 	        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-	        menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
+	        menu.findItem(R.id.logout).setVisible(!drawerOpen);
 	        return super.onPrepareOptionsMenu(menu);
 	    }
 	 
@@ -172,16 +197,34 @@ public class TaskTakerActivity extends Activity {
 	            fragment = new HomeFragment();
 	            break;
 	        case 1:
-	            fragment = new CreateTaskFragment();
+	            fragment = new ProfileFragment();
 	            break;
 	        case 2:
-	            fragment = new BrowseFragment();
+	            fragment = new CreateTaskFragment();
 	            break;
 	        case 3:
-	            fragment = new HomeFragment();
+	            fragment = new BrowseFragment();
 	            break;
 	        case 4:
-	            fragment = new HomeFragment();
+	          
+	        	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+	            builder.setMessage("Are you sure that you want to logout?")
+	               .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+	                   public void onClick(DialogInterface dialog, int id) {
+	                	   ParseUser.logOut();
+	                	   Intent intent = new Intent(TaskTakerActivity.this,
+	       						LoginActivity.class);
+	       				startActivity(intent);
+	                   }
+	               })
+	               .setNegativeButton("No", new DialogInterface.OnClickListener() {
+	                   public void onClick(DialogInterface dialog, int id) {
+	                       
+	                   }
+	               });
+	        // Create the AlertDialog object and return it
+	        AlertDialog popup = builder.create();
+	        popup.show();
 	            break;
 	        case 5:
 	            fragment = new HomeFragment();

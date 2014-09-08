@@ -29,6 +29,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 import android.os.Build;
 
 public class AcceptActivity extends Activity {
@@ -114,6 +115,7 @@ public class AcceptActivity extends Activity {
 			task.saveInBackground();
 			androidPush.setQuery(query);
 			androidPush.sendInBackground();
+			Toast.makeText(context, "you accpeted the task", Toast.LENGTH_SHORT).show();
 	}
 	public void decline(View v) {
 
