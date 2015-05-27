@@ -1,12 +1,32 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.hu.quantumshare.MainActivity" >
-
+    tools:context="edu.hu.timeshare.MainActivity" >
+	<item
+	    android:id="@+id/home"
+        android:orderInCategory="100"
+        android:title="Dashboard"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/view"
+        android:orderInCategory="100"
+        android:title="@string/view"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/create"
+        android:orderInCategory="100"
+        android:title="@string/create"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/browse"
+        android:orderInCategory="100"
+        android:title="@string/browse"
+        app:showAsAction="never"/>
     <item
         android:id="@+id/logout"
         android:orderInCategory="100"
-        android:title="@string/logoutBtn"
+        android:title="@string/logout"
         app:showAsAction="never"/>
+    
 
 </menu>

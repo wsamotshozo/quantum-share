@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">quantumshare</string>
+    <string name="app_name">Timeshare</string>
+    <string name="title_activity_login">LoginActivity</string>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
     <string name="username">Username</string>
     <string name="loginBtn">Login</string>
     <string name="signupBtn">Sign Up</string>
@@ -24,8 +24,55 @@
     <string-array name="needs">
         <item>someone to babysit</item>
         <item>someone to pickup kid(s)</item>
-        <item>I need a ride</item>
-        <item>I need to borrow a car</item>
+        <item>a ride</item>
+        <item>to borrow a car</item>
+    </string-array>
+    <string-array name="month">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+    <string-array name="day">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
     </string-array>
 
     <string name="title_activity_profile">ProfileActivity</string>
@@ -62,8 +109,18 @@
     <string name="desc_list_item_icon">Item Icon</string>
     <string name="title_activity_accept">AcceptActivity</string>
     <string name="title_activity_respond">RespondActivity</string>
-    
     <string name="accept">accept</string>
     <string name="decline">decline</string>
+    <string name="title_activity_signup">SignupActivity</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_createtask">CreatetaskActivity</string>
+    <string name="title_activity_browse">BrowseActivity</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="view">View Profile</string>
+    <string name="create">Create Task</string>
+    <string name="browse">Browse Task</string>
+    <string name="logout">Logout</string>
+    <string name="refresh">Refresh</string>
 
 </resources>
